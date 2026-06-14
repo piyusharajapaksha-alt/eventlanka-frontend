@@ -1,31 +1,58 @@
+"use client";
+
 import Link from "next/link";
+import { useState } from "react";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 export default function Navbar() {
-  return (
-    <header className="absolute top-0 left-0 right-0 z-50">
-      <div className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
-        <h1 className="text-2xl font-bold text-white">
-          Event<span className="text-orange-500">Lanka</span>
-        </h1>
+  const [open, setOpen] = useState(false);
 
-        <nav className="hidden md:flex gap-8 text-white">
+  return (
+    <nav className="absolute top-0 left-0 right-0 z-50">
+      <div className="max-w-7xl mx-auto px-4 py-5 flex items-center justify-between">
+
+        <Link
+          href="/"
+          className="text-white font-bold text-2xl"
+        >
+          EventLanka
+        </Link>
+
+        <div className="hidden lg:flex gap-8 text-white">
           <Link href="/">Home</Link>
           <Link href="/events">Events</Link>
-          <Link href="/categories">Categories</Link>
-          <Link href="/map">Map</Link>
-          <Link href="/about">About</Link>
-        </nav>
+          <Link href="/">Categories</Link>
+          <Link href="/">Map</Link>
+          <Link href="/">About</Link>
+        </div>
 
-        <div className="flex gap-3">
-          <button className="px-4 py-2 border rounded-lg text-white">
+        <div className="hidden lg:flex gap-3">
+          <button className="border border-white/30 text-white px-5 py-2 rounded-lg">
             Login
           </button>
 
-          <button className="px-4 py-2 rounded-lg bg-orange-500 text-white">
+          <button className="bg-orange-500 px-5 py-2 rounded-lg text-white">
             Register
           </button>
         </div>
+
+        <button
+          className="lg:hidden text-white text-2xl"
+          onClick={() => setOpen(!open)}
+        >
+          {open ? <FaTimes /> : <FaBars />}
+        </button>
       </div>
-    </header>
+
+      {open && (
+        <div className="lg:hidden bg-black/95 text-white p-5 space-y-4">
+          <Link href="/">Home</Link>
+          <Link href="/events">Events</Link>
+          <Link href="/">Categories</Link>
+          <Link href="/">Map</Link>
+          <Link href="/">About</Link>
+        </div>
+      )}
+    </nav>
   );
 }

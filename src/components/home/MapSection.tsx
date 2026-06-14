@@ -1,17 +1,23 @@
 export default function MapSection() {
   return (
-    <section className="max-w-7xl mx-auto px-6 py-16">
-      <div className="bg-slate-900 rounded-3xl p-10">
-        <h2 className="text-3xl text-white font-bold">
+    <section className="max-w-7xl mx-auto px-4 py-10">
+
+      <div className="bg-gradient-to-r from-blue-900 to-indigo-900 rounded-3xl p-10 text-white">
+
+        <h2 className="text-4xl font-bold">
           Events Around Sri Lanka
         </h2>
 
-        <div className="h-96 bg-slate-700 rounded-xl mt-8 flex items-center justify-center">
-          <p className="text-white">
-            Google Maps Coming Soon
-          </p>
-        </div>
+        <p className="mt-3 text-gray-300">
+          Explore events near you.
+        </p>
+
+        <button className="mt-6 bg-orange-500 px-6 py-3 rounded-xl">
+          Explore Map
+        </button>
+
       </div>
+
     </section>
   );
 }

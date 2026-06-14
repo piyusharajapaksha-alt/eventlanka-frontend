@@ -1,28 +1,31 @@
-type Props = {
-  title: string;
-  image: string;
-  location: string;
-};
+import Link from "next/link";
 
-export default function EventCard({
-  title,
-  image,
-  location,
-}: Props) {
+export default function EventCard({ event }: any) {
   return (
-    <div className="bg-white rounded-xl shadow overflow-hidden">
-      <img
-        src={image}
-        className="h-52 w-full object-cover"
-      />
+    <Link href={`/events/${event.id}`}>
+      <div className="bg-white rounded-2xl overflow-hidden shadow hover:shadow-xl transition">
 
-      <div className="p-4">
-        <h3 className="font-semibold">{title}</h3>
+        <img
+          src={event.image}
+          alt={event.title}
+          className="h-48 w-full object-cover"
+        />
 
-        <p className="text-gray-500 mt-2">
-          {location}
-        </p>
+        <div className="p-4">
+          <h3 className="font-semibold">
+            {event.title}
+          </h3>
+
+          <p className="text-gray-500 text-sm">
+            {event.location}
+          </p>
+
+          <p className="text-orange-500 mt-2 font-semibold">
+            {event.price}
+          </p>
+        </div>
+
       </div>
-    </div>
+    </Link>
   );
 }
