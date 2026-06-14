@@ -13,7 +13,7 @@ export default function Hero() {
         }}
       />
 
-      <div className="absolute inset-0 bg-black/100" />
+      <div className="absolute inset-0 bg-black/60" />
 
       <Navbar />
 
