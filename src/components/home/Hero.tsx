@@ -29,7 +29,7 @@ export default function Hero() {
         </p>
 
         <button className="mt-6 bg-orange-500 px-6 py-3 rounded-lg">
-          Explore Events
+          Explore Events(Adare nane enam ba)
         </button>
 
       </div>
