@@ -13,9 +13,12 @@ export default function Navbar() {
 
         <Link
           href="/"
-          className="text-white font-bold text-2xl"
+          className="font-bold text-2xl text-white"
         >
-          EventLanka
+          Event
+          <span className="bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">
+            Lanka
+          </span>
         </Link>
 
         <div className="hidden lg:flex gap-8 text-white">

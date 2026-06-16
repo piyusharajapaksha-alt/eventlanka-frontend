@@ -3,50 +3,52 @@ import SearchBar from "./SearchBar";
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-[750px] overflow-hidden">
+    <section className="relative overflow-hidden">
 
-      {/* BACKGROUND IMAGE */}
+      {/* Background Image */}
       <div
-        className="absolute inset-0 bg-cover bg-center"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage:
             "url('https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=2000')",
         }}
       />
 
-      {/* DARK OVERLAY */}
+      {/* Dark Overlay */}
       <div className="absolute inset-0 bg-black/60" />
 
-      {/* NAVBAR */}
+      {/* Navbar */}
       <div className="relative z-20">
         <Navbar />
       </div>
 
-      {/* CONTENT */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 pt-36">
+      {/* Hero Content */}
+      <div className="relative z-10 max-w-7xl mx-auto px-4 pt-24 md:pt-32 pb-30">
 
         <div className="max-w-3xl">
 
-          <span className="bg-white/10 px-4 py-2 rounded-full text-white">
+          <span className="inline-block bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-white text-sm">
             Discover • Connect • Enjoy
           </span>
 
-          <h1 className="text-white text-4xl md:text-7xl font-bold mt-6">
-            Discover Amazing Events Across{" "}
-            <span className="text-orange-500">Sri Lanka</span>
+          <h1 className="text-white text-4xl md:text-6xl lg:text-7xl font-bold mt-6 leading-tight">
+            Discover Amazing Events Across<br/>
+            <span className="bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">
+              Sri Lanka
+            </span>
           </h1>
 
-          <p className="text-gray-300 mt-5 text-lg">
+          <p className="text-gray-300 mt-5 text-lg max-w-2xl">
             Find festivals, concerts, cultural events, sports and more.
           </p>
 
         </div>
 
-      </div>
+        {/* Search Bar */}
+        <div className="mt-20 max-w-7xl">
+          <SearchBar />
+        </div>
 
-      {/* SEARCH BAR (FIXED POSITION) */}
-      <div className="relative">
-        <SearchBar />
       </div>
 
     </section>
